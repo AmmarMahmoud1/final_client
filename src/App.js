@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState,useEffect }    from 'react';
 import axios from 'axios';
@@ -9,7 +10,9 @@ import Login from './pages/Login'
 import NotFound from './pages/NotFound';
 import Home from './pages/Home'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const  App  = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -42,17 +45,17 @@ const  App  = () => {
               isAuth={isAuth}
               setIsAuth={setIsAuth}
               setUser={setUser}
-              setGotCookie={setGotCookie} />}>
+              setGotCookie={setGotCookie} />} />
         <Route path='/all' element={<Home />} />
           <Route path='/login' element={<Login isAuth={isAuth} setGotCookie={setGotCookie} />} />
           <Route path='/sing-up' element={<SignUp isAuth={isAuth} setGotCookie={setGotCookie} />} />
           
           <Route path='404' element={<NotFound />} />
+          </Routes>
+          </div>
+)
+};
          
-        </Route>
-      </Routes>
-    </div>
-  );
-}
+
 
 export default App;
