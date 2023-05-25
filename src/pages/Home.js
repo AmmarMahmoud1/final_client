@@ -10,7 +10,7 @@ const Home = () => {
         (async () => {
           try {
          
-            const { data } = await axios('https://searchandoffer.onrender.com/api/offers');
+            const { data } = await axios('https://searchandoffer.onrender.com/api/');
             console.log(data);
             setAllPosts(data);
             
@@ -26,7 +26,7 @@ const Home = () => {
 
       return (
         <>
-       { (allPost.map((post) => 
+       { (!allPost ? <div>loading..... </div> : allPost.map((post) => 
        {
             return (
                 <>
