@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
 
 const AddPost = () => {
   const [postData, setPostData] = useState({
@@ -71,20 +70,11 @@ const AddPost = () => {
       </Form.Group>
 
       <div className="col-auto mb-3">
-        <Dropdown>
-          <Dropdown.Toggle
-            variant="secondary"
-            id="dropdown-basic"
-            className="px-3 my-1"
-          >
-            Select
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Offer</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Search</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <Form.Select aria-label="Default select example">
+          <option>Select</option>
+          <option value="1">Search</option>
+          <option value="2">Offer</option>
+        </Form.Select>
       </div>
 
       <Form.Group controlId="content" className="row mb-3">
