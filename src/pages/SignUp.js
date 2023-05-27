@@ -24,7 +24,7 @@ const SignUp = ({ isAuth, setGotCookie }) => {
   {
     event.preventDefault();
     const {status } = axios
-    .post('http://localhost:5000/api/user/register', {...state})
+    .post('https://searchandoffer.onrender.com/api/user/register', {...state})
     .then(response => {
         setResult(response.data);
         setState({name:'' , email :'' , password: ''});
@@ -49,7 +49,7 @@ const SignUp = ({ isAuth, setGotCookie }) => {
   };
 
   if (isAuth) return <Navigate to='/' />;
-  else
+  
 return (
 
     <div>

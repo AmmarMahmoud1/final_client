@@ -51,14 +51,21 @@ export default function NavBar() {
             <MDBNavbarItem>
             <MDBNavbarLink href='/login'>Log in </MDBNavbarLink>
             </MDBNavbarItem>
+            <MDBNavbarItem>
+            <MDBNavbarLink href='/add'>add new </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+            <MDBNavbarLink href='/messages'>Inbox </MDBNavbarLink>
+            </MDBNavbarItem>
+            
  
-           {/* <MDBNavbarItem>
+           <MDBNavbarItem>
               <MDBDropdown>
                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                   Dropdown
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <MDBDropdownItem  link >Action</MDBDropdownItem>
+                  <MDBDropdownItem  link="/home" >Action</MDBDropdownItem>
                   <MDBDropdownItem link>Another action</MDBDropdownItem>
                   <MDBDropdownItem link>Something else here</MDBDropdownItem>
                   <MDBDropdownItem link>Something else here</MDBDropdownItem>
@@ -70,7 +77,7 @@ export default function NavBar() {
               <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
                 Disabled
               </MDBNavbarLink>
-            </MDBNavbarItem>  */}
+            </MDBNavbarItem> 
           </MDBNavbarNav>
 
           <form className='d-flex input-group w-auto'>

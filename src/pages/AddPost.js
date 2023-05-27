@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -130,7 +130,7 @@ const AddPost = () => {
         <Form.Label className="text-dark col-4">Image URL :</Form.Label>
         <div className="col">
           <Form.Control
-            type="text"
+            type="file"
             name="image"
             value={postData.image}
             onChange={handleChange}
