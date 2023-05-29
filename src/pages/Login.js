@@ -21,7 +21,6 @@ function Login({ isAuth, setGotCookie }) {
   });
   const [result, setResult] = useState(null);
   const [status, setStatus] = useState();
-  const [userName, setUserName] = useState('');
 
 
 
@@ -40,7 +39,7 @@ function Login({ isAuth, setGotCookie }) {
   {
     event.preventDefault();
      axios
-    .post('https://searchandoffer.onrender.com/api/user/login', {...state},{withCredentials: true})
+    .post('http://localhost:5000/api/user/login', {...state},{withCredentials: true})
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
@@ -55,7 +54,6 @@ function Login({ isAuth, setGotCookie }) {
     if (status ===200) { setGotCookie(true);}
     else (toastError('No cookie from server'))
    
-    console.log(status);
   }
 
   if (isAuth) return <Navigate to='/' />;

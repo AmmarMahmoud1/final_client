@@ -11,8 +11,7 @@ const AllMessages = () => {
     useEffect(() => {
       (async () => {
         try {
-          const headers = { 'Authorization': 'Bearer my-token' };
-          const { data } = await axios('https://searchandoffer.onrender.com/api/messages/all');
+          const { data } = await axios('http://localhost:5000/api/messages/all',{withCredentials: true});
           console.log(data);
           setMessages(data);
           console.log(messages,'messages');
@@ -34,7 +33,7 @@ const AllMessages = () => {
        messages.map(
         (message) => {
           return (
-            <div> {message.text} </div>
+            <div> {message.message.text} </div>
           )
         }
         

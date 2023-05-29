@@ -11,11 +11,25 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home'
 import NavBar from './components/NavBar';
 import Message from './components/Message'
+import Jobs from './components/Jobs';
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddPost from './pages/AddPost';
 import AllMessages from './components/AllMessages';
+import RealEstate from './components/RealEstate';
+import Pets from './components/Pets';
+import Autos from './components/Autos';
+import Services from './components/Services';
+import Furniture  from './components/Furniture'
+import Electronics from './components/Electronics'
+import Offers from './components/Offers';
+
+
+
+
+
+
 
 
 const  App  = () => {
@@ -23,7 +37,7 @@ const  App  = () => {
   const [user, setUser] = useState({});
   const [gotCookie, setGotCookie] = useState(false);
   
-  const url = 'https://searchandoffer.onrender.com/api/user/me'
+  const url = 'http://localhost:5000/api/user/me'
   useEffect(() => {
     const checkToken = async () => {
       try {
@@ -46,10 +60,10 @@ const  App  = () => {
 
   return (
     <>
-       {/* < NavBar  isAuth={isAuth}
+       < NavBar  isAuth={isAuth}
               setIsAuth={setIsAuth}
               setUser={setUser}
-              setGotCookie={setGotCookie}/> */}
+              setGotCookie={setGotCookie}/>
        <Routes>
         <Route path='/' element={
         <Layout
@@ -62,6 +76,14 @@ const  App  = () => {
           <Route path='/sing-up' element={<SignUp isAuth={isAuth} setGotCookie={setGotCookie} />} />
           <Route path='/add' element={<AddPost />} />
           <Route path='/messages' element ={< AllMessages />}    />
+          <Route path='/realestate' element ={< RealEstate />}    />
+          <Route path='/jobs' element ={< Jobs />}    />
+          <Route path='/furniture' element ={< Furniture />}    />
+          <Route path='/electronics' element ={< Electronics />}    />
+          <Route path='/pets' element ={< Pets />}    />
+          <Route path='/services' element ={< Services />}    />
+          <Route path='/autos' element ={< Autos />}    />
+          <Route path='/offers' element ={< Offers />}    />
           <Route path='404' element={<NotFound />} />
           </Routes>
       </>

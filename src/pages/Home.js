@@ -4,6 +4,7 @@ import {toastError}  from '../lib/toastError';
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
+import RealEstate from '../components/RealEstate';
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
         (async () => {
           try {
          
-            const { data } = await axios('https://searchandoffer.onrender.com/api');
+            const { data } = await axios('http://localhost:5000/api');
             console.log(data);
             setAllPosts(data);
             
@@ -30,10 +31,15 @@ const Home = () => {
 
       return (
         <>
-       { (!allPost ? <div>loading..... </div> : allPost.map((post) => 
-       {
+         
+       {/* { 
+        (!allPost ? <div>loading..... </div> 
+       
+          : allPost.map(
+            (post) =>  {
             return (
                 <>
+                  
 
                     <div className='container' key={post._id}>
                       <div className='row'>
@@ -44,7 +50,7 @@ const Home = () => {
                               <Badge bg="secondary"> {post.category}</Badge>
                         </h4>
                         <Card.Title>{post.title} {post.zipCode}</Card.Title>
-                        <Card.Img variant="top" src={post.image} />
+                        <Card.Img variant="top" className='w-100' src={post.image} />
                         <Card.Body>
                        
                         
@@ -81,7 +87,9 @@ const Home = () => {
             )
         }
         
-        ))}
+        ))} */}
+
+        <RealEstate allPost={allPost} />
         </>
 
    
