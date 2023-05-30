@@ -1,84 +1,32 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
-import {
-  MDBContainer,
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarToggler,
-  MDBIcon,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBBtn,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBCollapse,
-} from 'mdb-react-ui-kit';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-
-export default function NavBar() {
-  const [showBasic, setShowBasic] = useState(false);
-
+function CollapsibleExample() {
   return (
-    <MDBNavbar expand='lg' light bgColor='light'>
-      <MDBContainer fluid>
-        <MDBNavbarBrand href='#'>Search & Offers</MDBNavbarBrand>
-
-        <MDBNavbarToggler
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-          onClick={() => setShowBasic(!showBasic)}
-        >
-          <MDBIcon icon='bars' fas />
-        </MDBNavbarToggler>
-
-        <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='/'>
-                Home
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-            <MDBNavbarLink href='/offers'>Offers</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-            <MDBNavbarLink href='/sing-up'>Sign Up</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-            <MDBNavbarLink href='/login'>Log in </MDBNavbarLink>
-            </MDBNavbarItem>
- 
-           {/* <MDBNavbarItem>
-              <MDBDropdown>
-                <MDBDropdownToggle tag='a' className='nav-link' role='button'>
-                  Dropdown
-                </MDBDropdownToggle>
-                <MDBDropdownMenu>
-                  <MDBDropdownItem  link >Action</MDBDropdownItem>
-                  <MDBDropdownItem link>Another action</MDBDropdownItem>
-                  <MDBDropdownItem link>Something else here</MDBDropdownItem>
-                  <MDBDropdownItem link>Something else here</MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
-            </MDBNavbarItem> 
-
-            <MDBNavbarItem>
-              <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
-                Disabled
-              </MDBNavbarLink>
-            </MDBNavbarItem>  */}
-          </MDBNavbarNav>
-
-          <form className='d-flex input-group w-auto'>
-            <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-            <MDBBtn color='primary'>Search</MDBBtn>
-          </form>
-        </MDBCollapse>
-      </MDBContainer>
-    </MDBNavbar>
+    <Navbar collapseOnSelect  expand="lg"  variant="dark"  className='Navbar'>
+      <img src={require('../images/Search & Offer-logos_white.png')} className='logo'/>
+      <Container>
+        
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav light">
+          <Nav className="me-auto light">
+            <Nav.Link href="/">Home </Nav.Link>
+            <Nav.Link href="#pricing">About us</Nav.Link>
+            <Nav.Link href="/add">New Ads</Nav.Link>
+            
+          </Nav>
+          <Nav>
+            <Nav.Link href="/sign-up">SIGN UP</Nav.Link>
+            <Nav.Link eventKey={2} href="/login">
+             LOGIN
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+export default CollapsibleExample;
