@@ -16,7 +16,7 @@ const Layout = (props) => {
       <Welcome />
       <Categories />
       <Outlet />
-      <Footer />
+      
     </>
   );
 };

@@ -52,7 +52,7 @@ const SignUp = ({ isAuth, setGotCookie }) => {
   
 return (
 
-    <div>
+    <div className='container mt-5'>
         <form onSubmit={handleSubmit}>
         <Form.Group controlId="name">
           <Form.Label>User Name</Form.Label>
@@ -84,9 +84,14 @@ return (
             onChange={onInputChange}
           />
           </Form.Group>
-          <Button variant="primary" type="submit">
-          Submit
+          <Button  type="submit" className=' submit-signup m-3 px-2 text-center  '>
+            
+          Register
         </Button>
+        <Button variant="danger" type="submit" className='m-3 px-2 text-center '>
+            
+            Cancel
+          </Button>
 
         </form>
     </div>

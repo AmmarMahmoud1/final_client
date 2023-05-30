@@ -20,6 +20,7 @@ code {
 
 .Navbar {
  background-color: #1F2136;
+ color: white;
  
   
 }
@@ -69,7 +70,16 @@ background-size: contain;
 
 
 
-
+.submit-signup{
+  background-color: black;
+}
+.btn-back{
+  background-color: 1;
+  color: white;
+  text-decoration: none;
+  margin: 0 5%;
+  align-items: end;
+}
 
 .footer{
   margin-top: 10%;

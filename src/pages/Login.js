@@ -39,7 +39,7 @@ function Login({ isAuth, setGotCookie }) {
   {
     event.preventDefault();
      axios
-    .post('http://localhost:5000/api/user/login', {...state},{withCredentials: true})
+    .post('https://searchandoffer.onrender.com/api/user/login', {...state},{withCredentials: true})
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
@@ -73,7 +73,7 @@ function Login({ isAuth, setGotCookie }) {
 
       <div className="text-center">
         <p>Not a member? <a href="/sign-up">Register</a></p>
-        <p>or sign up with:</p>
+        {/* <p>or sign up with:</p>
 
         <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
           <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
@@ -92,7 +92,7 @@ function Login({ isAuth, setGotCookie }) {
             <MDBIcon fab icon='github' size="sm"/>
           </MDBBtn>
 
-        </div>
+        </div> */}
       </div>
 
     </MDBContainer>

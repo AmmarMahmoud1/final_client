@@ -10,8 +10,8 @@ function CollapsibleExample() {
       <Container>
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse id="responsive-navbar-nav light">
+          <Nav className="me-auto light">
             <Nav.Link href="/">Home </Nav.Link>
             <Nav.Link href="#pricing">About us</Nav.Link>
             <Nav.Link href="/add">New Ads</Nav.Link>

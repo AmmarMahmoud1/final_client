@@ -24,6 +24,7 @@ import Services from './components/Services';
 import Furniture  from './components/Furniture'
 import Electronics from './components/Electronics'
 import Offers from './components/Offers';
+import Footer from './components/Footer';
 
 
 
@@ -73,7 +74,7 @@ const  App  = () => {
               setGotCookie={setGotCookie} />} />
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login isAuth={isAuth} setGotCookie={setGotCookie} />} />
-          <Route path='/sing-up' element={<SignUp isAuth={isAuth} setGotCookie={setGotCookie} />} />
+          <Route path='/sign-up' element={<SignUp isAuth={isAuth} setGotCookie={setGotCookie} />} />
           <Route path='/add' element={<AddPost />} />
           <Route path='/messages' element ={< AllMessages />}    />
           <Route path='/realestate' element ={< RealEstate />}    />
@@ -86,6 +87,8 @@ const  App  = () => {
           <Route path='/offers' element ={< Offers />}    />
           <Route path='404' element={<NotFound />} />
           </Routes>
+
+          <Footer />
       </>
 )
 };

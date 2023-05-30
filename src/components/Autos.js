@@ -4,6 +4,7 @@ import Badge from 'react-bootstrap/Badge';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toastError}  from '../lib/toastError';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Autos =() =>{
     const [allPost, setAllPosts] = useState();
@@ -27,7 +28,7 @@ const Autos =() =>{
 
     return(
         <>
-        {(!allPost ? <div>downloading</div> 
+        {(!allPost ? <Spinner animation="border" variant="secondary" /> 
         
         : allPost.map((post) =>{
 

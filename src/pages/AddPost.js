@@ -53,7 +53,7 @@ const AddPost = () => {
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validated} onSubmit={handleSubmit} className="container mt-5">
     <Row className="mb-3">
     <Form.Group as={Col} md="4" controlId="validationCustom01">
       <Form.Label>I am </Form.Label> 
@@ -93,12 +93,63 @@ const AddPost = () => {
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
       <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-        <Form.Label>Username</Form.Label>
-        <InputGroup hasValidation>
-          <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+        <Form.Label>Price</Form.Label>
+        <InputGroup>
+          
           <Form.Control
             type="text"
-            placeholder="Username"
+            placeholder="Price"
+            aria-describedby="inputGroupPrepend"
+            
+          />
+          
+        </InputGroup>
+      </Form.Group>
+    </Row>
+    <Row className="mb-5 ">
+    <Form.Label>Please specify your ad down here:</Form.Label>
+    <FloatingLabel controlId="floatingTextarea2" label="ad content here">
+        <Form.Control  md="4"
+          as="textarea"
+          style={{ height: '100px' }}
+        />
+      </FloatingLabel>
+      <Form.Group as={Col} md="8" className="mt-3" controlId="validationCustomUsername">
+        <Form.Label>Upload Images</Form.Label>
+        <InputGroup >
+          
+          <Form.Control
+          
+            type="file"
+            placeholder="add image"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+        </InputGroup>
+      </Form.Group>
+    </Row>
+    <Row>
+    <Form.Group className="mt-3"  as={Col} md="4" controlId="validationCustomUsername">
+        <Form.Label>Address</Form.Label>
+        <InputGroup hasValidation>
+          
+          <Form.Control
+            type="text"
+            placeholder="Your address"
+            aria-describedby="inputGroupPrepend"
+          />
+          <Form.Control.Feedback type="invalid">
+            Please add your address.
+          </Form.Control.Feedback>
+        </InputGroup>
+      </Form.Group>
+      <Form.Group as={Col} md="4" className="mt-3" controlId="validationCustomUsername">
+        <Form.Label>Zip code</Form.Label>
+        <InputGroup hasValidation>
+          
+          <Form.Control
+            type="text"
+            placeholder="zip code"
             aria-describedby="inputGroupPrepend"
             required
           />
@@ -107,25 +158,27 @@ const AddPost = () => {
           </Form.Control.Feedback>
         </InputGroup>
       </Form.Group>
+      <Form.Group as={Col} md="4" className="mt-3" controlId="validationCustomUsername">
+        <Form.Label>City</Form.Label>
+        <InputGroup hasValidation>
+          
+          <Form.Control
+          
+            type="text"
+            placeholder="City"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Please add your city.
+          </Form.Control.Feedback>
+        </InputGroup>
+      </Form.Group>
     </Row>
-    <Row className="mb-5 ">
-    <FloatingLabel controlId="floatingTextarea2" label="Please add your body of Ad">
-        <Form.Control  md="4"
-          as="textarea"
-          placeholder="Leave a comment here"
-          style={{ height: '100px' }}
-        />
-      </FloatingLabel>
+    <Row className="flex-row justify-content-end mt-5 ">
+    <Button as={Col} md="2" className="mt-3" type="submit">Add New</Button>
+    <Button type="reset" variant="secondary" as={Col} md="2" className="mt-3 btn-back" ><a className="btn-back" href="/">Back</a> </Button>
     </Row>
-    <Form.Group className="mb-3">
-      <Form.Check
-        required
-        label="Agree to terms and conditions"
-        feedback="You must agree before submitting."
-        feedbackType="invalid"
-      />
-    </Form.Group>
-    <Button type="submit">Submit form</Button>
   </Form>
   );
 };
