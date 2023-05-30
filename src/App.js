@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import AddPost from "./pages/AddPost";
+import Footer from "../src/components/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -22,6 +23,8 @@ const App = () => {
         </Route>
       </Routes>
       <AddPost />
+
+      <Footer />
     </div>
   );
 };
