@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 const Footer = () => {
   return (
-    <div className="main-footer bg-dark text-white pt-4 pb-4">
+    <div className="main-footer text-white pt-4 pb-4">
       <div className="container">
         <div className="row">
           {/* Column-1 */}
