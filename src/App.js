@@ -24,6 +24,9 @@ import Electronics from "./components/Electronics";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
 import ItemCard from "./ItemCard";
+import ImageComponent from "./ImageComponent";
+import AnimalCard from "./AnimalCard";
+import ImageCard from './ImageCard';
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -55,6 +58,37 @@ const App = () => {
       </div>
     );
   }
+
+  const ParentComponent = () => {
+    return (
+      <div>
+        {/* Other components */}
+        <ImageComponent />
+        {/* Other components */}
+      </div>
+    );
+  };
+
+  const animals = () => {
+    return (
+      <div>
+        <h1>My App</h1>
+        <AnimalCard />
+      </div>
+    );
+  };
+
+  function App() {
+    return (
+      <div>
+        <h1>My App</h1>
+        <ImageCard />
+      </div>
+    );
+  }
+  
+ 
+  
 
   return (
     <>

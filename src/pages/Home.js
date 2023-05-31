@@ -45,6 +45,55 @@ const Home = () => {
       </div>
     );
   }
+  const ImageComponent = () => {
+    return (
+      <div className="item-card-img">
+        <img
+          src="../assets/images/products/j3.png"
+          alt="img"
+          className="rounded-top-7"
+        />
+      </div>
+    );
+  };
+
+  const AnimalCard = () => {
+    return (
+      <a href="#">
+        <div className="item-card-img">
+          <img
+            src="../assets/images/products/pe1.png"
+            alt="img"
+            className="rounded-top-7"
+          />
+        </div>
+        <div className="item-card-text">
+          <h4 className="mb-0">
+            Animals<span>(09)</span>
+          </h4>
+        </div>
+      </a>
+    );
+  };
+
+  function ImageCard() {
+    return (
+      <a href="#">
+        <div className="item-card-img">
+          <img
+            src="../assets/images/products/v2.png"
+            alt="img"
+            className="rounded-top-7"
+          />
+        </div>
+        <div className="item-card-text">
+          <h4 className="mb-0">
+            Vehicles<span>(15)</span>
+          </h4>
+        </div>
+      </a>
+    );
+  }
 
   return (
     <>
