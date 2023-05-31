@@ -32,6 +32,7 @@ function Login({ isAuth, setGotCookie }) {
       ...state,
       [name]: value
     });
+  
   };
 
 
@@ -39,7 +40,7 @@ function Login({ isAuth, setGotCookie }) {
   {
     event.preventDefault();
      axios
-    .post('https://searchandoffer.onrender.com/api/user/login', {...state},{withCredentials: true})
+    .post('http://localhost:5000/api/user/login', {...state},{withCredentials: true})
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
