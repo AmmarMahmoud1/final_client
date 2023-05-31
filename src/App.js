@@ -58,6 +58,18 @@ const  App  = () => {
     };
     checkToken();
   }, [gotCookie]);
+ 
+
+const App = () => {
+  return (
+    <div>
+      <h1>My App</h1>
+      <SearchBar />
+    </div>
+  );
+};
+
+
 
   return (
     <>

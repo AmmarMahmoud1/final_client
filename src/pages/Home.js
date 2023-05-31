@@ -6,6 +6,43 @@ import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import RealEstate from '../components/RealEstate';
 
+import React, { useState } from 'react';
+
+const SearchBar = () => {
+  const [keywords, setKeywords] = useState('');
+  const [location, setLocation] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleSearch = () => {
+    console.log('Keywords:', keywords);
+    console.log('Location:', location);
+    console.log('Selected Option:', selectedOption);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={keywords}
+        onChange={(e) => setKeywords(e.target.value)}
+        placeholder="Enter keywords"
+      />
+      <input
+        type="text"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        placeholder="Enter location"
+      />
+      <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+      </select>
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+};
+
 
 const Home = () => {
 
