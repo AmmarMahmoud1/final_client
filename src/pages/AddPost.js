@@ -35,6 +35,7 @@ const AddPost = () => {
   };
 
   const handleSelectFile = (event) => setImage(event.target.files[0]);
+  console.log(image);
 
   const handleSubmit = async (event) => {
     // console.log(event.target.parentElement.parentElement)
@@ -55,7 +56,6 @@ const AddPost = () => {
     form.append("price", postData.price);
     form.append("content", postData.content);
     (image && form.append("image", image));
-    (!image && form.append('image', null));
     form.append("Address", postData.Address);
     form.append("zipCode", postData.zipCode);
     form.append("city", postData.city);
@@ -64,7 +64,7 @@ const AddPost = () => {
 
     try {
       const res = await axios
-        .post("http://localhost:5000/api/add", {...form}, { withCredentials: true })
+        .post("http://localhost:5000/api/add", form, { withCredentials: true })
         .then((response) => {
           setPostData({
             postType: "",
@@ -76,7 +76,7 @@ const AddPost = () => {
             zipCode: "",
             city: "",
           });
-          setImage(null);
+         
         })
         .catch(() => {
           setResult({ success: false, message: "something is wrong" });
@@ -92,7 +92,7 @@ const AddPost = () => {
     // <form  onSubmit={handleSubmit} className="container mt-5">
   
     // </form>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container mt-5">
           <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>I am </Form.Label>
@@ -179,6 +179,7 @@ const AddPost = () => {
               placeholder="add image"
               aria-describedby="inputGroupPrepend"
               onChange={handleSelectFile}
+             
             />
           </InputGroup>
         </Form.Group>
@@ -256,9 +257,9 @@ const AddPost = () => {
           // onClick={handleSubmit}
           as={Col}
           md="2"
-          className="mt-3"
+          className="mt-3 btn btn-primary col-md-2 "
         >
-          Submit form
+          publish
         </button>
         <Button
           type="reset"

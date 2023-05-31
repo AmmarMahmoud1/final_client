@@ -31,18 +31,19 @@ const RealEstate =() =>{
         
         : allPost.map((post) =>{
 
-          if (post.category === 'Home')   return (
+          if (post.category === 'realEstate')   return (
             <div className='container mt-5
             ' key={post._id}>
             <div className='row'>
             <div className='col-sm-2'></div>
-            <div className='col-sm-8'>
-            <Card style={{ width: '65rem' }} key={post._id}>
+            <div className='col-sm-10'>
+            <Card style={{ width: '65rem' }} key={post._id} className='container m-2 p-4'>
             <h4>
-                    <Badge bg="secondary"> {post.category}</Badge>
+                    <Badge bg="secondary"> Home</Badge>
               </h4>
               <Card.Title>{post.title} {post.zipCode}</Card.Title>
-              <Card.Img variant="top" className='w-100' src={post.image} />
+              { post.image && <Card.Img variant="top" className='w-100' src={post.image} />}
+              {!post.image && < img className='image-placeholder' src={require('../images/Search & Offer-logos_black.png')} />}
               <Card.Body>
              
               
@@ -56,14 +57,14 @@ const RealEstate =() =>{
                 { post.createdAt}
                 </Card.Text>
                 
-                <Button >message</Button>
+                <Button > <a href='/chat'>message</a></Button>
               </Card.Body>
             </Card>
 
 
 
             </div>
-            <div className='col-sm-2'></div>
+            
 
 
             </div>

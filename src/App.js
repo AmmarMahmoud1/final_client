@@ -25,6 +25,7 @@ import Furniture  from './components/Furniture'
 import Electronics from './components/Electronics'
 import Offers from './components/Offers';
 import Footer from './components/Footer';
+import Chat from './components/Chat';
 
 
 
@@ -85,6 +86,7 @@ const  App  = () => {
           <Route path='/services' element ={< Services />}    />
           <Route path='/autos' element ={< Autos />}    />
           <Route path='/offers' element ={< Offers />}    />
+          <Route path='/chat' element ={ <Chat />} />
           <Route path='404' element={<NotFound />} />
           </Routes>
 

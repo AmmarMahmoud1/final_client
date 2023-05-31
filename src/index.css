@@ -69,7 +69,9 @@ background-size: contain;
 }
 
 
-
+.button-add{
+  with:20%;
+}
 .submit-signup{
   background-color: black;
 }
@@ -79,6 +81,14 @@ background-size: contain;
   text-decoration: none;
   margin: 0 5%;
   align-items: end;
+}
+
+.image-placeholder{
+  width: 420px;
+  height: 320px;
+  background-color: #1F2136;
+  border-radius: 5px ;
+  opacity: 0.05;
 }
 
 .footer{
@@ -103,3 +113,19 @@ background-size: contain;
 
 }
 
+#chat2 .form-control {
+  border-color: transparent;
+}
+
+#chat2 .form-control:focus {
+  border-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
