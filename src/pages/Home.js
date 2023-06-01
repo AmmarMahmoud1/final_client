@@ -45,7 +45,7 @@ const Home = () => {
       </div>
     );
   }
-  const ImageComponent = () => {
+  const jobs = () => {
     return (
       <div className="item-card-img">
         <img
@@ -57,7 +57,7 @@ const Home = () => {
     );
   };
 
-  const AnimalCard = () => {
+  const petsCard = () => {
     return (
       <a href="#">
         <div className="item-card-img">
@@ -69,14 +69,14 @@ const Home = () => {
         </div>
         <div className="item-card-text">
           <h4 className="mb-0">
-            Animals<span>(09)</span>
+            Pets<span>(09)</span>
           </h4>
         </div>
       </a>
     );
   };
 
-  function ImageCard() {
+  function autos() {
     return (
       <a href="#">
         <div className="item-card-img">
@@ -88,7 +88,7 @@ const Home = () => {
         </div>
         <div className="item-card-text">
           <h4 className="mb-0">
-            Vehicles<span>(15)</span>
+            Autos<span>(15)</span>
           </h4>
         </div>
       </a>

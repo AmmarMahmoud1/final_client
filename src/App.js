@@ -23,10 +23,6 @@ import Furniture from "./components/Furniture";
 import Electronics from "./components/Electronics";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
-import ItemCard from "./ItemCard";
-import ImageComponent from "./ImageComponent";
-import AnimalCard from "./AnimalCard";
-import ImageCard from './ImageCard';
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -53,27 +49,27 @@ const App = () => {
     return (
       <div>
         {/* Other components */}
-        <ItemCard />
+        <Furniture />
         {/* Other components */}
       </div>
     );
   }
 
-  const ParentComponent = () => {
+  const jobs = () => {
     return (
       <div>
         {/* Other components */}
-        <ImageComponent />
+        <Jobs />
         {/* Other components */}
       </div>
     );
   };
 
-  const animals = () => {
+  const pets = () => {
     return (
       <div>
         <h1>My App</h1>
-        <AnimalCard />
+        <petsCard />
       </div>
     );
   };
@@ -82,13 +78,10 @@ const App = () => {
     return (
       <div>
         <h1>My App</h1>
-        <ImageCard />
+        <Autos />
       </div>
     );
   }
-  
- 
-  
 
   return (
     <>
