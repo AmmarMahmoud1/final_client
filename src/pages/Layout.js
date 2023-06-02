@@ -7,6 +7,7 @@ import Home from './Home';
 import Welcome from '../components/welcome';
 import Categories from '../components/Categories';
 import Footer from '../components/Footer';
+import Chat from '../components/Chat';
 
 
 const Layout = (props) => {
@@ -16,7 +17,7 @@ const Layout = (props) => {
       <Welcome />
       <Categories />
       <Outlet />
-      
+     
     </>
   );
 };
