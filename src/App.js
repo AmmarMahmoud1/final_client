@@ -38,7 +38,10 @@ const  App  = () => {
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [gotCookie, setGotCookie] = useState(false);
-  
+  const [allPost, setAllPosts] = useState();
+
+ 
+
   const url = 'http://localhost:5000/api/user/me'
   useEffect(() => {
     const checkToken = async () => {
@@ -58,8 +61,27 @@ const  App  = () => {
       }
     };
     checkToken();
+    (async () => {
+      try {
+     
+        const { data } = await axios('https://searchandoffer.onrender.com/api');
+       
+        setAllPosts(data);
+        
+      } catch (error) {
+        toastError(
+          error.message || 'No posts,  Sorry..!'
+        );
+        
+      }
+    })();
+
+    
   }, [gotCookie]);
 
+ 
+
+ 
   return (
     <>
        < NavBar  isAuth={isAuth}
@@ -78,7 +100,7 @@ const  App  = () => {
           <Route path='/sign-up' element={<SignUp isAuth={isAuth} setGotCookie={setGotCookie} />} />
           <Route path='/add' element={<AddPost />} />
           <Route path='/messages' element ={< AllMessages />}    />
-          <Route path='/realestate' element ={< RealEstate />}    />
+          <Route path='/realestate' element ={< RealEstate allPost={allPost} />}    />
           <Route path='/jobs' element ={< Jobs />}    />
           <Route path='/furniture' element ={< Furniture />}    />
           <Route path='/electronics' element ={< Electronics />}    />
@@ -86,7 +108,7 @@ const  App  = () => {
           <Route path='/services' element ={< Services />}    />
           <Route path='/autos' element ={< Autos />}    />
           <Route path='/offers' element ={< Offers />}    />
-          <Route path='/chat' element ={ <Chat />} />
+          <Route path='/message/:id' element ={ <Chat allPost={allPost} gotCookie={gotCookie}  />} />
           <Route path='404' element={<NotFound />} />
           </Routes>
 

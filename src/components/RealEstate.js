@@ -4,26 +4,15 @@ import Badge from 'react-bootstrap/Badge';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toastError}  from '../lib/toastError';
+import {Route, Routes, Link} from 'react-router-dom'
+import Chat from './Chat'
 
-const RealEstate =() =>{
-    const [allPost, setAllPosts] = useState();
+const RealEstate =({allPost}) =>{
 
-    useEffect(() => {
-        (async () => {
-          try {
-         
-            const { data } = await axios('https://searchandoffer.onrender.com/api');
-            console.log(data);
-            setAllPosts(data);
-            
-          } catch (error) {
-            toastError(
-              error.message || 'No posts,  Sorry..!'
-            );
-            
-          }
-        })();
-      }, []);
+
+  
+
+  
 
     return(
         <>
@@ -56,8 +45,8 @@ const RealEstate =() =>{
                 <Card.Text>
                 { post.createdAt}
                 </Card.Text>
-                
-                <Button > <a href='/chat'>message</a></Button>
+               
+                <Link to={`/message/${post._id}`}>meesage</Link>
               </Card.Body>
             </Card>
 
