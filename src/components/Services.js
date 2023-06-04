@@ -4,6 +4,7 @@ import Badge from 'react-bootstrap/Badge';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toastError}  from '../lib/toastError';
+import {Link} from 'react-router-dom'
 
 const Services =() =>{
     const [allPost, setAllPosts] = useState();
@@ -56,7 +57,7 @@ const Services =() =>{
                 { post.createdAt}
                 </Card.Text>
                 
-                <Button >message</Button>
+                <Link to={`/message/${post._id}`}>message</Link>
               </Card.Body>
             </Card>
 

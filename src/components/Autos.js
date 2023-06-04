@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toastError}  from '../lib/toastError';
 import Spinner from 'react-bootstrap/Spinner';
+import {Link } from 'react-router-dom';
 
 const Autos =() =>{
     const [allPost, setAllPosts] = useState();
@@ -13,7 +14,7 @@ const Autos =() =>{
         (async () => {
           try {
          
-            const { data } = await axios('http://localhost:5000/api');
+            const { data } = await axios('https://searchandoffer.onrender.com/api');
             console.log(data);
             setAllPosts(data);
             
@@ -57,7 +58,7 @@ const Autos =() =>{
                 { post.createdAt}
                 </Card.Text>
                 
-                <Button >message</Button>
+                <Link to={`/message/${post._id}`}>message</Link>
               </Card.Body>
             </Card>
 

@@ -42,7 +42,7 @@ const  App  = () => {
 
  
 
-  const url = 'http://localhost:5000/api/user/me'
+  const url = 'https://searchandoffer.onrender.com/api/user/me'
   useEffect(() => {
     const checkToken = async () => {
       try {
