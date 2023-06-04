@@ -46,7 +46,7 @@ const  App  = () => {
   useEffect(() => {
     const checkToken = async () => {
       try {
-        const { data } = await axios(url
+        const { data } = await axios('https://searchandoffer.onrender.com/api/user/me'
           ,
           {
             withCredentials: true,
@@ -88,6 +88,7 @@ const  App  = () => {
               setIsAuth={setIsAuth}
               setUser={setUser}
               setGotCookie={setGotCookie}/>
+              
        <Routes>
         <Route basename="/searchandoffer1" path='/' element={
         <Layout
