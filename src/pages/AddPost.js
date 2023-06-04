@@ -64,7 +64,7 @@ const AddPost = () => {
 
     try {
       const res = await axios
-        .post("http://localhost:5000/api/add", form, { withCredentials: true })
+        .post("https://searchandoffer.onrender.com/api/add", form, { withCredentials: true })
         .then((response) => {
           setPostData({
             postType: "",
