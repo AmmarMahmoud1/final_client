@@ -10,6 +10,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
+    "env-cmd": "^10.1.0",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^3.1.2",
     "mdb-react-ui-kit": "^6.1.0",
@@ -27,6 +28,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env.staging npm run build",
+
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
