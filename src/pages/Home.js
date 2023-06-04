@@ -15,7 +15,7 @@ const Home = () => {
         (async () => {
           try {
          
-            const { data } = await axios('http://localhost:5000/api');
+            const { data } = await axios('https://searchandoffer.onrender.com/api');
             console.log(data);
             setAllPosts(data);
             

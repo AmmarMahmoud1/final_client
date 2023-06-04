@@ -89,7 +89,7 @@ const  App  = () => {
               setUser={setUser}
               setGotCookie={setGotCookie}/>
        <Routes>
-        <Route path='/' element={
+        <Route basename="/searchandoffer1" path='/' element={
         <Layout
               isAuth={isAuth}
               setIsAuth={setIsAuth}
