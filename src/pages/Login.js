@@ -44,7 +44,7 @@ function Login({ isAuth, setGotCookie }) {
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
-        console.log(response.status +"response");
+        console.log(response +"response");
         setState({ email :'' , password: ''});
         
     })
