@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toastError } from '../lib/toastError';
@@ -32,8 +32,11 @@ function Login({ isAuth, setGotCookie }) {
       ...state,
       [name]: value
     });
+
+    
   
   };
+  console.log({...state});
 
 
   const handleSubmit = (event) =>
@@ -44,7 +47,7 @@ function Login({ isAuth, setGotCookie }) {
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
-        console.log(response +"response");
+        console.log(response.status);
         setState({ email :'' , password: ''});
         
     })
@@ -56,8 +59,16 @@ function Login({ isAuth, setGotCookie }) {
     else (toastError('No cookie from server'))
    
   }
+      
+          
+ 
 
+    
+   
+  
+useEffect(()=>{
   if (isAuth) return <Navigate to='/' />;
+},[isAuth])
   return (
     <form onSubmit={handleSubmit}>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">

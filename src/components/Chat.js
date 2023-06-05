@@ -97,11 +97,7 @@ const handleChange = (event) =>{
 
 const handleSubmit = async () => {
   try {
-//     const form = new FormData();
-// form.append('message', message);
-// form.append('receiverId', receiverId);
-// form.append('postId', id);
-// form.forEach(entery => console.log(entery));
+
     await axios.post(
       'https://searchandoffer1.onrender.com/api/messages/addmsg',
      {message, receiverId, postId},
