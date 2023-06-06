@@ -40,7 +40,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const { data } = await axios(`https://searchandoffer1.onrender.com/api/messages/post/allmessages/${id}`, { withCredentials: true });
+      const { data } = await axios(`https://searchandoffer.onrender.com/api/messages/post/allmessages/${id}`, { withCredentials: true });
 
       const sortedMessages = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
@@ -57,7 +57,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const { data } = await axios(`https://searchandoffer1.onrender.com/api/${id}`, { withCredentials: true });
+      const { data } = await axios(`https://searchandoffer.onrender.com/api/${id}`, { withCredentials: true });
 
       console.log(data.userId);
       setTitle(data.title);
@@ -75,7 +75,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       if (receiverId !== '') {
-        const { data } = await axios(`https://searchandoffer1.onrender.com/api/user/${receiverId}`, { withCredentials: true });
+        const { data } = await axios(`https://searchandoffer.onrender.com/api/user/${receiverId}`, { withCredentials: true });
 
         console.log(data);
          setReceiver(data.name)
@@ -99,7 +99,7 @@ const handleSubmit = async () => {
   try {
 
     await axios.post(
-      'https://searchandoffer1.onrender.com/api/messages/addmsg',
+      'https://searchandoffer.onrender.com/api/messages/addmsg',
      {message, receiverId, postId},
       { withCredentials: true }
     );
