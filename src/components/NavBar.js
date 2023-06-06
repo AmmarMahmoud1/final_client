@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function CollapsibleExample() {
   return (
@@ -13,7 +12,7 @@ function CollapsibleExample() {
         <Navbar.Collapse id="responsive-navbar-nav light">
           <Nav className="me-auto light">
             <Nav.Link href="/">Home </Nav.Link>
-            <Nav.Link href="#pricing">About us</Nav.Link>
+            <Nav.Link href="#">About us</Nav.Link>
             <Nav.Link href="/add">New Ads</Nav.Link>
             
           </Nav>

@@ -45,7 +45,7 @@ const  App  = () => {
   useEffect(() => {
     const checkToken = async () => {
       try {
-        const { data } = await axios('http://localhost:8080/api/user/me'
+        const { data } = await axios('https://searchandoffer1.onrender.com/api/user/me'
           ,
           {
             withCredentials: true,
