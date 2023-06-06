@@ -46,19 +46,23 @@ function Login({ isAuth, setGotCookie }) {
         method: 'POST',
         credentials: 'include',
         headers: {
-          
           'Content-Type': 'application/json',
           'Access-Control-Allow-Credentials': 'true',
         },
-        body: JSON.stringify({...state})
+        body: JSON.stringify({ ...state })
       });
-      
+    
       if (response.status === 200) {
         setGotCookie(true);
-        const data = await response.json();
-        setResult(data);
-        setStatus(response.status);
-        setState({ email: '', password: '' });
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const data = await response.json();
+          setResult(data);
+          setStatus(response.status);
+          setState({ email: '', password: '' });
+        } else {
+          throw new Error('Invalid JSON response');
+        }
       } else {
         toastError('No cookie from server');
         setResult({ success: false, message: 'something is wrong' });
