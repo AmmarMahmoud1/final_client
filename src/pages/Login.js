@@ -49,7 +49,7 @@ function Login({ isAuth, setGotCookie }) {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Credentials': 'true',
         },
-        body: JSON.stringify({ ...state })
+        body: JSON.stringify({ ...state }),
       });
     
       if (response.status === 200) {
@@ -61,7 +61,10 @@ function Login({ isAuth, setGotCookie }) {
           setStatus(response.status);
           setState({ email: '', password: '' });
         } else {
-          throw new Error('Invalid JSON response');
+          const data = await response.text();
+          setResult({ success: true, message: 'Non-JSON response', data });
+          setStatus(response.status);
+          setState({ email: '', password: '' });
         }
       } else {
         toastError('No cookie from server');
