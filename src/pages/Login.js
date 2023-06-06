@@ -40,42 +40,26 @@ function Login({ setGotCookie }) {
   console.log({...state});
 
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) =>
+  {
     event.preventDefault();
-    try {
-      const response = await fetch('https://searchandoffer1.onrender.com/api/user/login', {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Credentials': 'true',
-        },
-        body: JSON.stringify({ ...state }),
-      });
-    
-      if (response.status === 200) {
-        setGotCookie(true);
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
-          const data = await response.json();
-          setResult(data);
-          setStatus(response.status);
-          setState({ email: '', password: '' });
-        } else {
-          const data = await response.text();
-          setResult({ success: true, message: 'Non-JSON response', data });
-          setStatus(response.status);
-          setState({ email: '', password: '' });
-        }
-      } else {
-        toastError('No cookie from server');
-        setResult({ success: false, message: 'something is wrong' });
-      }
-    } catch (error) {
-      console.error(error);
-      setResult({ success: false, message: 'something is wrong' });
-    }
-  };
+     axios
+    .post('https://searchandoffer.onrender.com/api/user/login', {...state},{withCredentials: true})
+    .then(response => {
+        setResult(response.data);
+        setStatus(response.status);
+        console.log(response.status +"response");
+        setState({ email :'' , password: ''});
+        
+    })
+    .catch(() => {
+        setResult({success:false , message: 'something is wrong'})
+    })
+      
+    if (status ===200) { setGotCookie(true);}
+    else (toastError('No cookie from server'))
+   
+  }
           
  
 

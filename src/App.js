@@ -45,18 +45,16 @@ const  App  = () => {
   useEffect(() => {
     const checkToken = async () => {
       try {
-        const response = await fetch('https://searchandoffer1.onrender.com/api/user/me', {
-          method: 'GET',
-          credentials: 'include'
-        });
-    
-        if (response.ok) {
-          const data = await response.json();
-          setUser(data);
-          setIsAuth(true);
-        } else {
-          throw new Error('Request failed');
-        }
+        const { data } = await axios('https://searchandoffer.onrender.com/api/user/me'
+          ,
+          {
+            withCredentials: true,
+          }
+        );
+        setUser(data);
+        setIsAuth(true);
+        
+        
       } catch (error) {
         toastError(error.message);
       }
