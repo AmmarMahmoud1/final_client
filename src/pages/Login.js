@@ -43,7 +43,7 @@ function Login({ isAuth, setGotCookie }) {
   {
     event.preventDefault();
      axios
-    .post('https://searchandoffer.onrender.com/api/user/login', {...state},{withCredentials: true})
+    .post('https://searchandoffer1.onrender.com/api/user/login', {...state},{withCredentials: true})
     .then(response => {
         setResult(response.data);
         setStatus(response.status);
@@ -85,26 +85,6 @@ useEffect(()=>{
 
       <div className="text-center">
         <p>Not a member? <a href="/sign-up">Register</a></p>
-        {/* <p>or sign up with:</p>
-
-        <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='facebook-f' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='twitter' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='google' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='github' size="sm"/>
-          </MDBBtn>
-
-        </div> */}
       </div>
 
     </MDBContainer>
