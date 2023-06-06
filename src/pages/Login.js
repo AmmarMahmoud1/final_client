@@ -39,27 +39,33 @@ function Login({ isAuth, setGotCookie }) {
   console.log({...state});
 
 
-  const handleSubmit = (event) =>
-  {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-     axios
-    .post('https://searchandoffer1.onrender.com/api/user/login', {...state},{withCredentials: true})
-    .then(response => {
-        setResult(response.data);
+    try {
+      const response = await fetch('https://searchandoffer1.onrender.com/api/user/login', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(state)
+      });
+      
+      if (response.status === 200) {
+        setGotCookie(true);
+        const data = await response.json();
+        setResult(data);
         setStatus(response.status);
-        console.log(response.status);
-        setState({ email :'' , password: ''});
-        
-    })
-    .catch(() => {
-        setResult({success:false , message: 'something is wrong'})
-    })
-      
-    if (status ===200) { setGotCookie(true);}
-    else (toastError('No cookie from server'))
-   
-  }
-      
+        setState({ email: '', password: '' });
+      } else {
+        toastError('No cookie from server');
+        setResult({ success: false, message: 'something is wrong' });
+      }
+    } catch (error) {
+      console.error(error);
+      setResult({ success: false, message: 'something is wrong' });
+    }
+  };
           
  
 
