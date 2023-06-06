@@ -12,7 +12,8 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function Login({ isAuth, setGotCookie }) {
+function Login({ setGotCookie }) {
+// function Login({ isAuth, setGotCookie }) {
 
   const navigate = useNavigate();
   const [state, setState] = useState({
@@ -81,9 +82,9 @@ function Login({ isAuth, setGotCookie }) {
     
    
   
-useEffect(()=>{
-  if (isAuth) return <Navigate to='/' />;
-},[isAuth])
+// useEffect(()=>{
+//   if (isAuth) return <Navigate to='/' />;
+// },[isAuth])
   return (
     <form onSubmit={handleSubmit}>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
