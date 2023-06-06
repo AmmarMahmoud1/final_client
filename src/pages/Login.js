@@ -48,7 +48,7 @@ function Login({ isAuth, setGotCookie }) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(state)
+        body: JSON.stringify({...state})
       });
       
       if (response.status === 200) {
